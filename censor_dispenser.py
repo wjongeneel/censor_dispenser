@@ -13,3 +13,13 @@ def censor_word(word, text):
     # replaces the string-variable word in the string-variable text by string-variable replacement_string
     new_text = text.replace(word, replacement_string)
     return new_text
+
+# replaces string-variables in the array words in the string-variable text by *-characters
+def censor_list_of_words(words, text):
+    new_text = text
+    for word in words:
+        replacement_string = ""
+        for i in range(0, len(word)):
+            replacement_string = replacement_string + "*"
+        new_text = new_text.replace(word, replacement_string)
+    return new_text
